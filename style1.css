@@ -1,0 +1,104 @@
+/* Resetando estilos padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Definindo o fundo e estilo geral da página */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  margin: 0;
+}
+
+/* Estilos do container principal */
+.form-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column; /* Alinha tudo de cima para baixo */
+  gap: 20px; /* Espaçamento entre os elementos */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Estilos dos títulos */
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+h5 {
+  font-size: 1rem;
+  color: #888;
+}
+
+/* Estilos do campo de texto */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+/* Estilo para o campo de texto quando em foco */
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Estilos do botão */
+button {
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito de hover no botão */
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Efeito de foco no botão */
+button:focus {
+  outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h3,
+  h5 {
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  button {
+    width: 100%;
+  }
+}

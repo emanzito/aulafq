@@ -1,0 +1,34 @@
+/* Reset básico */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Centralizar o conteúdo */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Centralizar e redimensionar a imagem */
+.imagem-principal {
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  margin: 20px 0;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .imagem-principal {
+    width: 100%;
+    max-width: 90%;
+  }
+}
