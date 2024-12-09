@@ -5,65 +5,61 @@
   box-sizing: border-box;
 }
 
-/* Definindo o fundo e estilo geral da página */
+/* Estilo geral do corpo */
 body {
   font-family: "Arial", sans-serif;
-  display: flex;
   background-image: url(solid-grey-2560-x-1440-background-01ujw6cukox08a4y.jpg);
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: #333;
-  margin: 0;
+  padding: 20px;
+  color: #333; /* Texto escuro */
 }
 
-/* Estilos do container principal */
-.form-container {
+/* Container para organizar os itens */
+body > div {
   background-color: white;
-  padding: 40px;
-  border-radius: 8px;
+  padding: 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px;
+  max-width: 800px;
   display: flex;
-  flex-direction: column; /* Alinha tudo de cima para baixo */
-  gap: 20px; /* Espaçamento entre os elementos */
-  text-align: center; /* Centraliza o texto */
+  flex-direction: column; /* Alinha verticalmente */
+  gap: 15px; /* Espaçamento entre os elementos */
+  text-align: left; /* Alinha o texto à esquerda */
 }
 
-/* Estilos dos títulos */
+/* Estilos para os cabeçalhos */
 h1 {
   font-size: 2rem;
-  color: #333;
+  color: #007bff; /* Azul claro */
 }
 
-h3 {
+h2 {
   font-size: 1.2rem;
-  color: #666;
+  color: #555;
 }
 
-h5 {
+p {
   font-size: 1rem;
-  color: #888;
+  color: #777;
 }
 
-/* Estilos do campo de texto */
+/* Estilo para o campo de texto */
 input[type="text"] {
   width: 100%;
+  max-width: 400px;
   padding: 10px;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
   transition: border-color 0.3s ease;
 }
 
-/* Estilo para o campo de texto quando em foco */
 input[type="text"]:focus {
   border-color: #007bff;
   outline: none;
 }
 
-/* Estilos do botão */
+/* Estilo para o botão */
 button {
   background-color: #007bff;
   color: white;
@@ -75,13 +71,11 @@ button {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Efeito de hover no botão */
 button:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
 }
 
-/* Efeito de foco no botão */
 button:focus {
   outline: none;
 }
@@ -92,13 +86,11 @@ button:focus {
     font-size: 1.5rem;
   }
 
-  h3,
-  h5 {
+  h2 {
     font-size: 1rem;
   }
 
-  input[type="text"],
-  button {
-    width: 100%;
+  p {
+    font-size: 0.9rem;
   }
 }
