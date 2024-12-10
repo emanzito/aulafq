@@ -103,7 +103,7 @@ function verify8() {
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "resposta certa") {
+  } else if (input === "1,70 x 10^10") {
     res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: é!";
   } else {
     res.innerHTML = "A resposta está incorreta.";
@@ -117,21 +117,21 @@ function verify9() {
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "resposta certa") {
+  } else if (input === "8000N") {
     res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: ciência,!";
   } else {
     res.innerHTML = "A resposta está incorreta.";
   }
 }
 
-function verify9() {
+function verify10() {
   var input = document.getElementById("box").value;
   var res = document.getElementById("resultado");
 
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "resposta certa") {
+  } else if (input === "20,4m") {
     res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: não azar!";
   } else {
     res.innerHTML = "A resposta está incorreta.";
