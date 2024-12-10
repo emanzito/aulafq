@@ -89,7 +89,7 @@ function verify7() {
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "resposta certa") {
+  } else if (input === "29,4m/s") {
     res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: chão!";
   } else {
     res.innerHTML = "A resposta está incorreta.";
