@@ -75,7 +75,7 @@ function verify6() {
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "resposta certa") {
+  } else if (input === "p = m x g") {
     res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: no!";
   } else {
     res.innerHTML = "A resposta está incorreta.";
