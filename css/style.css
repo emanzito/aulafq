@@ -5,11 +5,10 @@ body {
   background-image: url(../solid-grey-2560-x-1440-background-01ujw6cukox08a4y.jpg);
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   flex-direction: column;
+  align-items: center;
   text-align: center;
+  height: 100vh;
 }
 
 /* Estilo do cabeçalho */
@@ -35,6 +34,21 @@ h2 {
   margin: 0 auto; /* Centraliza no layout */
 }
 
+/* Estilo do cronômetro */
+#cronometro {
+  position: fixed; /* Fixa o cronômetro no topo esquerdo */
+  top: 20px;
+  left: 20px;
+  background-color: #000; /* Fundo preto */
+  color: #fff; /* Texto branco */
+  padding: 10px 20px;
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 1.5rem; /* Tamanho do texto */
+  font-weight: bold; /* Destaca o texto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  z-index: 1000; /* Garante que ficará acima de outros elementos */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   h1 {
@@ -47,5 +61,10 @@ h2 {
 
   .imagem-principal {
     width: 90%; /* Reduz o tamanho da imagem para caber em ecrãs menores */
+  }
+
+  #cronometro {
+    font-size: 1.2rem; /* Ajusta o tamanho do texto do cronometro */
+    padding: 8px 16px; /* Ajusta o espaçamento do cronometro */
   }
 }
