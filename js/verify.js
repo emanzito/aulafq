@@ -1,11 +1,11 @@
-function verify2() {
+function verify1() {
   var input = document.getElementById("box").value;
   var res = document.getElementById("resultado");
 
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "resposta certa") {
+  } else if (input === "velocidade/aceleração") {
     res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: Não!";
   } else {
     res.innerHTML = "A resposta está incorreta.";
@@ -19,7 +19,7 @@ function verify2() {
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "resposta certa") {
+  } else if (input === "movimento circular/centro") {
     res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: gosto!";
   } else {
     res.innerHTML = "A resposta está incorreta.";
@@ -33,7 +33,7 @@ function verify3() {
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "resposta certa") {
+  } else if (input === "É a variação da velocidade num determinado intervalo de tempo") {
     res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: de!";
   } else {
     res.innerHTML = "A resposta está incorreta.";
