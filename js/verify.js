@@ -132,7 +132,7 @@ function verify10() {
     window.alert("Por favor, preenche o campo!");
     return;
   } else if (input === "20,4m") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: não azar!";
+    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: não azar! Coloca agora todas as palavras que juntas-te no formulário";
   } else {
     res.innerHTML = "A resposta está incorreta.";
   }
