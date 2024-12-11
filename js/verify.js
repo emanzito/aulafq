@@ -1,139 +1,104 @@
-function verify1() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
+let tempoRestante = localStorage.getItem("tempoRestante") ? parseInt(localStorage.getItem("tempoRestante")) : 3600; // 1 hora em segundos
+
+function formatarTempo(segundos) {
+  const minutos = Math.floor(segundos / 60);
+  const seg = segundos % 60;
+  return `${minutos < 10 ? "0" : ""}${minutos}:${seg < 10 ? "0" : ""}${seg}`;
+}
+
+function iniciarCronometro() {
+  const cronometro = document.getElementById("cronometro");
+  cronometro.textContent = formatarTempo(tempoRestante);
+
+  const intervalo = setInterval(() => {
+    if (tempoRestante > 0) {
+      tempoRestante--;
+      localStorage.setItem("tempoRestante", tempoRestante); // Atualiza no localStorage
+      cronometro.textContent = formatarTempo(tempoRestante);
+    } else {
+      clearInterval(intervalo);
+      localStorage.removeItem("tempoRestante"); // Remove ao esgotar
+      cronometro.textContent = "Tempo esgotado!";
+      alert("O tempo acabou! Não conseguiste completar o desafio.");
+    }
+  }, 1000);
+}
+
+window.onload = iniciarCronometro;
+
+// Funções de verificação, agora com a redução do tempo
+function verificarResposta(respostaCorreta, inputId, mensagemCorreta, tempoReduzido) {
+  const input = document.getElementById(inputId).value;
+  const res = document.getElementById("resultado");
 
   if (input.trim() === "") {
     window.alert("Por favor, preenche o campo!");
     return;
-  } else if (input === "velocidade/aceleração") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: A!";
+  }
+
+  if (input === respostaCorreta) {
+    res.innerHTML = mensagemCorreta;
   } else {
     res.innerHTML = "A resposta está incorreta.";
+    tempoRestante -= tempoReduzido; // Reduz tempo
+    if (tempoRestante < 0) tempoRestante = 0; // Evita que o tempo seja negativo
+    localStorage.setItem("tempoRestante", tempoRestante); // Atualiza no localStorage
+    alert(`Resposta incorreta! Tempo reduzido em ${tempoReduzido / 60} minutos.`);
   }
+}
+
+// Agora as funções de verificação podem ser chamadas dessa forma:
+function verify1() {
+  verificarResposta(
+    "velocidade/aceleração",
+    "box",
+    "Parabéns, a resposta está correta, aqui a palavra: A!",
+    240 // 4 minutos
+  );
 }
 
 function verify2() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "movimento circular/centro") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: física!";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta("movimento circular/centro", "box", "Parabéns, a resposta está correta, aqui a palavra: física!", 240);
 }
 
 function verify3() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "É a variação da velocidade num determinado intervalo de tempo") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: prova!";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta(
+    "É a variação da velocidade num determinado intervalo de tempo",
+    "box",
+    "Parabéns, a resposta está correta, aqui a palavra: prova!",
+    240
+  );
 }
 
 function verify4() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "w = f x d x cos a") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: que!";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta("w = f x d x cos a", "box", "Parabéns, a resposta está correta, aqui a palavra: que!", 240);
 }
 
 function verify5() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "2500N") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: cair";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta("2500N", "box", "Parabéns, a resposta está correta, aqui a palavra: cair", 240);
 }
 
 function verify6() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "p = m x g") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: no!";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta("p = m x g", "box", "Parabéns, a resposta está correta, aqui a palavra: no!", 240);
 }
 
 function verify7() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "29,4m/s") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: chão!";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta("29,4m/s", "box", "Parabéns, a resposta está correta, aqui a palavra: chão!", 240);
 }
 
 function verify8() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "1,70 x 10^10") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: é!";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta("1,70 x 10^10", "box", "Parabéns, a resposta está correta, aqui a palavra: é!", 240);
 }
 
 function verify9() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "8000N") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: ciência,!";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta("8000N", "box", "Parabéns, a resposta está correta, aqui a palavra: ciência!", 240);
 }
 
 function verify10() {
-  var input = document.getElementById("box").value;
-  var res = document.getElementById("resultado");
-
-  if (input.trim() === "") {
-    window.alert("Por favor, preenche o campo!");
-    return;
-  } else if (input === "20,4m") {
-    res.innerHTML = "Parabéns, a resposta está correta, aqui a palavra: não azar! Coloca agora todas as palavras que juntas-te no formulário";
-  } else {
-    res.innerHTML = "A resposta está incorreta.";
-  }
+  verificarResposta(
+    "20,4m",
+    "box",
+    "Parabéns, a resposta está correta, aqui a palavra: não azar! Coloca agora todas as palavras que juntas-te no formulário",
+    240
+  );
 }
