@@ -19,7 +19,7 @@ function iniciarCronometro() {
       clearInterval(intervalo);
       localStorage.removeItem("tempoRestante"); // Remove ao esgotar
       cronometro.textContent = "Tempo esgotado!";
-      alert("O tempo acabou! Não conseguiste completar o desafio.");
+      window.alert("O tempo acabou! Não conseguiste completar o desafio.");
     }
   }, 1000);
 }
