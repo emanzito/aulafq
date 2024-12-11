@@ -12,8 +12,9 @@
       <h1>Coloca aqui as palavras obtidas nas pistas e forma a frase</h1>
       <h3>Nota: coloca os acentos e põe a primeira letra maiúscula!</h3>
       <input type="text" name="caixa" id="caixa" />
-      <button id="submeter" onclick="form()">Submeter</button>
+      <button id="submeter">Submeter</button>
       <div id="imagemPopup" style="display: none; text-align: center">
+        <p id="mensagem"></p>
         <img src="../media/chicochicao.png" alt="Imagem de Sucesso" style="width: 200px" />
         <div id="confetis" style="display: none">
           <img src="../media/confetis.gif" alt="Confetis" />
@@ -21,6 +22,10 @@
         <audio id="musica" src="../media/ayrton.mp3"></audio>
       </div>
     </div>
-    <script src="../js/form.js"></script>
+    <script type="module">
+      import { form } from "../js/form.js";
+
+      document.getElementById("submeter").addEventListener("click", form);
+    </script>
   </body>
 </html>
