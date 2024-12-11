@@ -62,12 +62,7 @@ function verify2() {
 }
 
 function verify3() {
-  verificarResposta(
-    "É a variação da velocidade num determinado intervalo de tempo",
-    "box",
-    "Parabéns, a resposta está correta, aqui a palavra: prova!",
-    240
-  );
+  verificarResposta("am = dv / dt", "box", "Parabéns, a resposta está correta, aqui a palavra: prova!", 240);
 }
 
 function verify4() {
